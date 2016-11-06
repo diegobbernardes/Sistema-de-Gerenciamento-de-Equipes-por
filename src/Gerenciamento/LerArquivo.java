@@ -9,7 +9,6 @@ public class LerArquivo {
 			temp = csv.readObject();
 			if (temp != null)
 				vetT.append(temp);
-				//System.out.println(competencia.getCompetencia());
 		} while (temp != null);
 		
 		return vetT;

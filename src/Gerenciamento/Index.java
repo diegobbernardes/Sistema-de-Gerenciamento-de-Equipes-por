@@ -90,15 +90,16 @@ public class Index {
 			}
 		}
 	}
+	public String digita(String texto){
+		Scanner sc  = new Scanner(System.in);
+		System.out.print(texto);
+			return sc.next();
+	}	
 	private void getInfoColaborador(Colaboradores colaboradores) {
 		String a = digita("Digite o nome do projeto: ");
 		String b = digita("Digite o nome do funcionario: ");
 		String c = digita("Digite a competencia: ");
 		colaboradores.incluirColaboradores(a,b,c);		
 	}
-	public String digita(String texto){
-		Scanner ler  = new Scanner(System.in);
-		System.out.print(texto);
-			return ler.next();
-	}	
+	
 }
