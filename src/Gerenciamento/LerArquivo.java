@@ -3,14 +3,14 @@ package Gerenciamento;
 public class LerArquivo {
 	protected <T> Vetor<T> lerArquivo(Parser<T> parser,CSVFile<T> csv){
 		Vetor<T> vetT = new Vetor<>();
-		T coringa = null;
+		T temp = null;
 		csv.skipLine();
 		do {
-			coringa = csv.readObject();
-			if (coringa != null)
-				vetT.append(coringa);
+			temp = csv.readObject();
+			if (temp != null)
+				vetT.append(temp);
 				//System.out.println(competencia.getCompetencia());
-		} while (coringa != null);
+		} while (temp != null);
 		
 		return vetT;
 	}
