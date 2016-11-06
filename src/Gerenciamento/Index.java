@@ -19,18 +19,18 @@ public class Index {
 		Funcionarios funcionarios = new Funcionarios();
 		
 		Menu menu = new Menu();
-		Menu menu2 = new Menu();
-		Menu menu3 = new Menu();
+		Menu menuColaborador = new Menu();
+		Menu menuFuncionario = new Menu();
 		Menu menu4 = new Menu();
 		
 		Opcao voltar = new Opcao("Voltar");
 		Opcao opcaoColaboradores = new Opcao("Colaboradores");
 		Opcao opcaoFuncionarios = new Opcao("Funcionarios");
-		//opcoes menu2
+		//opcoes menuColaborador
 		Opcao listarColaboradores = new Opcao("Listar Colaboradores");
 		Opcao incluirColaborador = new Opcao("Adicionar Colaborador");
 		Opcao excluirColaborador = new Opcao("Remover Colaborador");
-		//opcoes menu3
+		//opcoes menuFuncionario
 		Opcao listarFuncionarios = new Opcao("Listar Funcionarios");
 		Opcao incluirFuncionario = new Opcao("Adicionar Funcionario");
 		Opcao excluirFuncionario = new Opcao("Remover Funcionario");
@@ -39,20 +39,20 @@ public class Index {
 		menu.addOpcao(opcaoFuncionarios);
 		menu.addOpcao(voltar);
 		
-		menu2.addOpcao(listarColaboradores);
-		menu2.addOpcao(incluirColaborador);
-		menu2.addOpcao(excluirColaborador);	
+		menuColaborador.addOpcao(listarColaboradores);
+		menuColaborador.addOpcao(incluirColaborador);
+		menuColaborador.addOpcao(excluirColaborador);	
 		
-		menu3.addOpcao(listarFuncionarios);
-		menu3.addOpcao(incluirFuncionario);
-		menu3.addOpcao(excluirFuncionario);
+		menuFuncionario.addOpcao(listarFuncionarios);
+		menuFuncionario.addOpcao(incluirFuncionario);
+		menuFuncionario.addOpcao(excluirFuncionario);
 		
 		while(true){
 			menu.show();
 			switch(menu.getOpcaoUsuario()){
 				case 0:
-					menu2.show();
-					switch(menu2.getOpcaoUsuario()){
+					menuColaborador.show();
+					switch(menuColaborador.getOpcaoUsuario()){
 						case 0:
 							colaboradores.listaColaboradores();
 							break;
@@ -68,8 +68,8 @@ public class Index {
 					}
 					break;
 				case 1:
-					menu3.show();
-					switch(menu3.getOpcaoUsuario()){ 
+					menuFuncionario.show();
+					switch(menuFuncionario.getOpcaoUsuario()){ 
 						case 0:
 							funcionarios.listaFuncionarios();
 							break;
