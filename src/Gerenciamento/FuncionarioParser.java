@@ -14,10 +14,9 @@ public class FuncionarioParser implements Parser<Funcionario>{
 		Funcionario funcionario = new Funcionario(nomeFuncionario,salarioFuncionario);
 		
 		int numeroCompetencias = parser.nextInt();
-		funcionario.setNumeroCompetencia(numeroCompetencias);
 		
 		for (int i = 0; i < numeroCompetencias; i++) {
-			funcionario.setCompetenciaFuncionario(i, parser.next());
+			funcionario.setCompetenciaFuncionario(parser.next());
 		}
 		
 		parser.close();

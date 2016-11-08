@@ -24,4 +24,10 @@ public class Funcionarios extends LerArquivo{
 			System.out.println(i+" - "+vetFuncionarios.get(i).getFuncionario());
 		}
 	}
+
+	public void incluirFuncionario(String nomeFuncionario, double salarioFuncionario, Vetor<String> competencias) {
+		Funcionario funcionario = new Funcionario(nomeFuncionario,salarioFuncionario);
+		funcionario.setCompetenciaFuncionario(competencias);
+		vetFuncionarios.append(funcionario);		
+	}
 }

@@ -5,26 +5,30 @@ public class Funcionario implements Comparable<Funcionario>{
 	public Funcionario(String nomeFuncionario,double salarioFuncionario){
 		this.nomeFuncionario = nomeFuncionario;
 		this.salarioFuncionario = salarioFuncionario;
-		competenciaFuncionario = new String[0];
+		this.vetCompetencias = new Vetor<>();
 	}
 	
 	private String nomeFuncionario;
 	private double salarioFuncionario;
-	private String [] competenciaFuncionario;
+	private Vetor<String> vetCompetencias;
 	
-	public void setNumeroCompetencia(int numeroCompetenciaFuncionario){
-		if (numeroCompetenciaFuncionario > 0)
-			this.competenciaFuncionario = new String[numeroCompetenciaFuncionario];
+	public void setCompetenciaFuncionario(Vetor<String> competenciaFuncionario){
+		this.vetCompetencias = competenciaFuncionario;
 	}
-	
-	public void setCompetenciaFuncionario(int i , String competenciaFuncionario){
-		if (i < 0 || i >= this.competenciaFuncionario.length)
-			throw new ArrayIndexOutOfBoundsException(i);
-		this.competenciaFuncionario[i] = competenciaFuncionario;
+	public void setCompetenciaFuncionario(String competenciaProjeto){
+		this.vetCompetencias.append(competenciaProjeto);
 	}
 	
 	public String getFuncionario(){
-		return nomeFuncionario + " " + salarioFuncionario;
+		return nomeFuncionario + " " + salarioFuncionario + " " + listaCompetenciaFuncionario();
+	}
+	
+	public String listaCompetenciaFuncionario(){
+		String retorno = "";
+		for (int i = 0; i < vetCompetencias.getSize(); i++) {
+			retorno+=", "+vetCompetencias.get(i);
+		}
+		return retorno;
 	}
 
 	@Override

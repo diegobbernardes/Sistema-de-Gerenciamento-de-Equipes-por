@@ -84,11 +84,11 @@ public class Vetor<T> {
 	}
 	
 	public void remove(int index){
-		validaIndice(index);
-		numeroElementos--;
+		validaIndice(index);		
 		for(int i = index; i < numeroElementos-1; i++){
 			dados[i] = dados[i+1];
 		}
+		numeroElementos--;
 		
 	}
 
