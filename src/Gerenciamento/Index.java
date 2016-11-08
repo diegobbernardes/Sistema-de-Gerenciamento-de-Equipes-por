@@ -163,8 +163,17 @@ public class Index {
 						case 0:
 							competencias.listaCompetencias();
 							break;
+						case 1:
+							competencias.excluirCompetencia((Integer.parseInt(digita("Digite o codigo a ser deletado:"))));
+							break;
+						case 2:							
+							getInfoCompetencia(competencias);
+							break;
 						case 3:
 							bool = false;
+							break;
+						default:
+							System.out.println("-------\nOpção Invalida.\n-------");
 							break;
 						}
 					}while(bool);
@@ -179,6 +188,10 @@ public class Index {
 		}
 	}
 	
+	private void getInfoCompetencia(Competencias competencias) {
+		String competencia = digita("Digite o nome da competencia: ");
+		competencias.incluirCompetencia(competencia);		
+	}
 	private void getInfoProjeto(Projetos projetos) {
 		String nomeProjeto = digita("Digite o nome do projeto: ");
 		LocalDate dataInicio = LocalDate.parse(digita("Digite a data de inicio do projeto: "));
@@ -201,10 +214,10 @@ public class Index {
 	}
 	
 	private void getInfoColaborador(Colaboradores colaboradores) {
-		String a = digita("Digite o nome do projeto: ");
-		String b = digita("Digite o nome do funcionario: ");
-		String c = digita("Digite a competencia: ");
-		colaboradores.incluirColaboradores(a,b,c);		
+		String nomeProjeto = digita("Digite o nome do projeto: ");
+		String nomeFuncionario = digita("Digite o nome do funcionario: ");
+		String competencias = digita("Digite a competencia: ");
+		colaboradores.incluirColaboradores(nomeProjeto,nomeFuncionario,competencias);		
 	}
 
 	public String digita(String texto){

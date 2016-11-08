@@ -16,8 +16,16 @@ public class Competencias extends LerArquivo{
 	
 	public void listaCompetencias(){
 		for (int i = 0; i < vetCompetencia.getSize(); i++) {
-			System.out.println( vetCompetencia.get(i).getCompetencia());
+			System.out.println(i+" "+ vetCompetencia.get(i).getCompetencia());
 		}
+	}
+	
+	public void excluirCompetencia(int index){
+		vetCompetencia.remove(index);
+	}
+	
+	public void incluirCompetencia(String competencia) {
+		vetCompetencia.append(new Competencia(competencia));		
 	}
 	
 }
