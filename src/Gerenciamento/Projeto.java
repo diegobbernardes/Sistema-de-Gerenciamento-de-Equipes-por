@@ -7,27 +7,32 @@ public class Projeto implements Comparable<Projeto>{
 		this.nomeProjeto = nomeProjeto;
 		this.dataInicioProjeto = dataInicioProjeto;
 		this.dataFinalProjeto = dataFinalProjeto;
-		this.competenciaProjeto = new String[0];
+		this.vetCompetencias = new Vetor<>();
 	}
 	
 	private String nomeProjeto;
 	private LocalDate dataInicioProjeto;
 	private LocalDate dataFinalProjeto;
-	private String[] competenciaProjeto;
+	private Vetor<String> vetCompetencias;
 	
-	public void setNumeroProjeto(int numeroCompetenciaProjeto){
-		if (numeroCompetenciaProjeto > 0)
-			this.competenciaProjeto = new String[numeroCompetenciaProjeto];
+	public void setCompetenciaProjeto(Vetor<String> competenciaProjeto){
+		this.vetCompetencias = competenciaProjeto;
 	}
 	
-	public void setCompetenciaProjeto(int i , String competenciaProjeto){
-		if (i < 0 || i >= this.competenciaProjeto.length)
-			throw new ArrayIndexOutOfBoundsException(i);
-		this.competenciaProjeto[i] = competenciaProjeto;
+	public void setCompetenciaProjeto(String competenciaProjeto){
+		this.vetCompetencias.append(competenciaProjeto);
+	}
+	
+	public String listaCompetenciaProjetos(){
+		String retorno = "";
+		for (int i = 0; i < vetCompetencias.getSize(); i++) {
+			retorno+=", "+vetCompetencias.get(i);
+		}
+		return retorno;
 	}
 	
 	public String getProjeto(){
-		return nomeProjeto + " " + dataInicioProjeto + " " + dataFinalProjeto;
+		return nomeProjeto + " " + dataInicioProjeto + " " + dataFinalProjeto + " " + listaCompetenciaProjetos();
 	}
 
 	@Override

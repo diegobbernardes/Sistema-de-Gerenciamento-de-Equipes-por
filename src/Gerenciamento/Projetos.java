@@ -1,6 +1,7 @@
 package Gerenciamento;
 
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
 
 public class Projetos extends LerArquivo{
 	
@@ -17,8 +18,18 @@ public class Projetos extends LerArquivo{
 	
 	public void listaProjetos(){
 		for (int i = 0; i < vetProjetos.getSize(); i++) {
-			System.out.println( vetProjetos.get(i).getProjeto());
+			System.out.println(i+" - "+ vetProjetos.get(i).getProjeto());
 		}
+	}
+	
+	public void excluirProjeto(int index){
+		vetProjetos.remove(index);
+	}
+	
+	public void incluirProjeto(String nomeProjeto,LocalDate dataInicio,LocalDate dataFim,Vetor<String> competencias) {
+		Projeto projeto = new Projeto(nomeProjeto,dataInicio,dataFim);
+		projeto.setCompetenciaProjeto(competencias);
+		vetProjetos.append(projeto);		
 	}
 	
 }

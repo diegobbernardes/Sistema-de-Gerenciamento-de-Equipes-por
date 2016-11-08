@@ -17,10 +17,9 @@ public class ProjetoParser implements Parser<Projeto>{
 		Projeto projeto = new Projeto(nomeProjeto,dataInicioProjeto,dataFimProjeto);
 		
 		int numeroCompetencias = parser.nextInt();
-		projeto.setNumeroProjeto(numeroCompetencias);
 		
 		for (int i = 0; i < numeroCompetencias; i++) {
-			projeto.setCompetenciaProjeto(i, parser.next());
+			projeto.setCompetenciaProjeto(parser.next());
 		}
 		
 		parser.close();
